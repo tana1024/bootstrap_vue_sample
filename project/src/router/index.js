@@ -4,6 +4,9 @@ import Router from 'vue-router'
 //import HelloWorld from '@/components/HelloWorld'
 import Login from '@/components/Login'
 import Portal from '@/components/Portal'
+import Information from '@/components/Information'
+import Scraping from '@/components/Scraping'
+import Map from '@/components/Map'
 
 
 Vue.use(Router)
@@ -25,8 +28,29 @@ export default new Router({
     },
     {
       path: '/portal',
-      name: 'Portal',
-      component: Portal
+      component: Portal,
+      children: [
+        {
+          path: '',
+          name: 'Information',
+          component: Information
+        },
+        {
+          path: 'information',
+          name: 'Information',
+          component: Information
+        },
+        {
+          path: 'scraping',
+          name: 'Scraping',
+          component: Scraping
+        },
+        {
+          path: 'map',
+          name: 'Map',
+          component: Map
+        }
+      ]
     }
   ]
 })

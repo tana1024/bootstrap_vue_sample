@@ -5,9 +5,9 @@
       <div class="bg-light border-right" id="sidebar-wrapper">
         <div class="sidebar-heading">GIS Utils</div>
         <div class="list-group list-group-flush">
-          <a href="#" class="list-group-item list-group-item-action bg-light">Dashboard</a>
-          <a href="#" class="list-group-item list-group-item-action bg-light">Shortcuts</a>
-          <a href="#" class="list-group-item list-group-item-action bg-light">Overview</a>
+          <router-link to="/portal/information" class="list-group-item list-group-item-action bg-light">Information</router-link>
+          <router-link to="/portal/scraping"  class="list-group-item list-group-item-action bg-light">Scraping</router-link>
+          <router-link to="/portal/map"  class="list-group-item list-group-item-action bg-light">Map</router-link>
           <a href="#" class="list-group-item list-group-item-action bg-light">Events</a>
           <a href="#" class="list-group-item list-group-item-action bg-light">Profile</a>
           <a href="#" class="list-group-item list-group-item-action bg-light">Status</a>
@@ -47,7 +47,7 @@
           </div>
         </nav>
         <div class="container-fluid">
-          <Dashboard/>
+          <router-view/>
         </div>
       </div>
       <!-- /#page-content-wrapper -->
@@ -56,17 +56,12 @@
 </template>
 
 <script>
-import Dashboard from '@/components/Dashboard'
 export default {
-  name: 'Portal',
-  components: {Dashboard}
+  name: 'Portal'
 }
 </script>
 
 <style scoped>
-  body {
-    overflow-x: hidden;
-  }
 
   #sidebar-wrapper {
     min-height: 100vh;
